@@ -15,6 +15,14 @@ import { i2pdInstallCommands, knownEepsites } from '@/lib/configs/i2pd';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
+import { FloatingChatExpert } from './FloatingChatExpert';
+
+const i2pSuggestedQuestions = [
+  'В чём разница между I2P и Tor?',
+  'Как работает Garlic Routing?',
+  'Что такое eepsite и как его открыть?',
+  'Как настроить туннели в i2pd?',
+];
 
 const i2pdFields = [
   { key: 'ipv4', label: 'IPv4', type: 'boolean' as const, defaultValue: true },
@@ -287,6 +295,14 @@ export function I2PSection() {
           <StepGuide title="Установка i2pd на Linux" steps={i2pInstallSteps} accentColor="#0284C7" />
         </TabsContent>
       </Tabs>
+
+      <FloatingChatExpert
+        topic="I2P"
+        accentColor="#0284C7"
+        icon="🕸️"
+        systemContext="I2P (Invisible Internet Project) — Garlic Routing, i2pd маршрутизатор, туннели (inbound/outbound), floodfill-узлы, eepsites, .b32.i2p адреса, сравнение с Tor, share ratio"
+        suggestedQuestions={i2pSuggestedQuestions}
+      />
     </div>
   );
 }

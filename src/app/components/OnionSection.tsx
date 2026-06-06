@@ -14,6 +14,14 @@ import { StepGuide } from './StepGuide';
 import { onionTheory } from '@/lib/data/onion-theory';
 import { onionDeploymentSteps, legalOnionServices } from '@/lib/configs/nginx-onion';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { FloatingChatExpert } from './FloatingChatExpert';
+
+const onionSuggestedQuestions = [
+  'Что такое Onion Service v3?',
+  'Как работают Introduction Point и Rendezvous?',
+  'Как настроить Client Authorization для .onion?',
+  'Какие легальные сервисы работают в .onion?',
+];
 
 const nginxFields = [
   { key: 'onionAddress', label: 'Onion Address', type: 'text' as const, defaultValue: 'your-onion-address.onion' },
@@ -272,6 +280,14 @@ export function OnionSection() {
           />
         </TabsContent>
       </Tabs>
+
+      <FloatingChatExpert
+        topic="Onion-сервисы"
+        accentColor="#DC2626"
+        icon="🔗"
+        systemContext="Onion-сервисы (.onion) — Hidden Service v3, Introduction Point, Rendezvous Point, дескрипторы, HSDir, Client Authorization, OnionBalance, Nginx конфигурация для Onion, легальные Onion-сервисы"
+        suggestedQuestions={onionSuggestedQuestions}
+      />
     </div>
   );
 }

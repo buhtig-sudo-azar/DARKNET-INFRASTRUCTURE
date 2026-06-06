@@ -5,13 +5,18 @@ export const maxDuration = 60;
 
 export async function POST(req: NextRequest) {
   try {
-    const { messages, searchContext } = await req.json();
+    const { messages, searchContext, topicContext } = await req.json();
 
-    const systemPrompt = `Ты — эксперт по сетевой инфраструктуре Dark/Deep Web. Отвечай на русском языке.
+    const basePrompt = `Ты — эксперт по сетевой инфраструктуре Dark/Deep Web. Отвечай на русском языке.
 Специализации: Tor (The Onion Router), SOCKS5-прокси, I2P (Invisible Internet Project), Onion-сервисы, сетевая безопасность, анонимность, криптография.
 Образовательный контекст: давай подробные объяснения с примерами, терминами и ссылками на RFC/стандарты.
 Если вопрос не связан с темой Dark/Deep Web инфраструктуры, вежливо перенаправь пользователя на соответствующие разделы.
-Всегда объясняй технические термины простым языком. Приводи примеры конфигураций когда уместно.${searchContext ? `\n\nКонтекст из поиска:\n${searchContext}` : ''}`;
+Всегда объясняй технические термины простым языком. Приводи примеры конфигураций когда уместно.`;
+
+    const topicPart = topicContext ? `\n\nСейчас пользователь изучает раздел: ${topicContext}. Отвечай в контексте этой темы. Если вопрос относится к другой теме, коротко ответь, но порекомендуй перейти в соответствующий раздел для более детального изучения.` : '';
+    const searchPart = searchContext ? `\n\nКонтекст из поиска:\n${searchContext}` : '';
+
+    const systemPrompt = basePrompt + topicPart + searchPart;
 
     const apiKey = process.env.OPENROUTER_API_KEY;
     const model = process.env.OPENROUTER_MODEL || 'google/gemma-4-31b-it:free';

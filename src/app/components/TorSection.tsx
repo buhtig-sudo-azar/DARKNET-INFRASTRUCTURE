@@ -15,9 +15,17 @@ import { TheoryCard } from './TheoryCard';
 import { CodeBlock } from './CodeBlock';
 import { ConfigGenerator } from './ConfigGenerator';
 import { StepGuide } from './StepGuide';
+import { FloatingChatExpert } from './FloatingChatExpert';
 import { torTheory } from '@/lib/data/tor-theory';
 import { torrcOptionDescriptions } from '@/lib/configs/torrc';
 import { Shield, Zap, Globe, Lock } from 'lucide-react';
+
+const torSuggestedQuestions = [
+  'Зачем нужны 3 хопа в Tor?',
+  'Чем Guard-узел отличается от Exit?',
+  'Какие риски при запуске Exit-узла?',
+  'Что такое Bridge и зачем он нужен?',
+];
 
 const torRelayFields = [
   { key: 'nodeType', label: 'Тип ноды', type: 'select' as const, defaultValue: 'relay', options: [
@@ -276,6 +284,14 @@ export function TorSection() {
           </Card>
         </TabsContent>
       </Tabs>
+
+      <FloatingChatExpert
+        topic="Tor"
+        accentColor="#7C3AED"
+        icon="🧅"
+        systemContext="Tor (The Onion Router) — луковичная маршрутизация, Guard/Middle/Exit ноды, Bridge, torrc конфигурация, Exit Policy, пропускная способность, безопасность Exit-узла"
+        suggestedQuestions={torSuggestedQuestions}
+      />
     </div>
   );
 }

@@ -11,6 +11,14 @@ import { ConfigGenerator } from './ConfigGenerator';
 import { StepGuide } from './StepGuide';
 import { socksTheory, socksComparisonTable } from '@/lib/data/socks-theory';
 import { danteInstallCommands, firefoxSocksConfig, privoxyConfig } from '@/lib/configs/sockd';
+import { FloatingChatExpert } from './FloatingChatExpert';
+
+const socksSuggestedQuestions = [
+  'Зачем нужен SOCKS5, если есть VPN?',
+  'Как предотвратить утечки DNS через SOCKS5?',
+  'Что такое socks5h и чем отличается от socks5?',
+  'Как настроить Privoxy с Tor?',
+];
 
 const danteFields = [
   { key: 'internalAddress', label: 'Внутренний адрес', type: 'text' as const, defaultValue: '0.0.0.0', placeholder: '0.0.0.0' },
@@ -168,6 +176,14 @@ export function SocksSection() {
           <StepGuide title="Установка Dante SOCKS5" steps={socksInstallSteps} accentColor="#059669" />
         </TabsContent>
       </Tabs>
+
+      <FloatingChatExpert
+        topic="SOCKS5"
+        accentColor="#059669"
+        icon="🔌"
+        systemContext="SOCKS5-прокси — протокол SOCKS5, Dante сервер, аутентификация, UDP ASSOCIATE, Tor как SOCKS5-прокси, Privoxy, предотвращение утечек DNS, настройка браузера"
+        suggestedQuestions={socksSuggestedQuestions}
+      />
     </div>
   );
 }
