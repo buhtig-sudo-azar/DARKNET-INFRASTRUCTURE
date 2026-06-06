@@ -92,7 +92,7 @@ export default function HomePage() {
                 <span className="text-emerald-400">DARK</span>
               </h1>
             </div>
-            <Badge variant="outline" className="text-xs border-emerald-500/30 text-emerald-400">
+            <Badge variant="outline" className="text-xs border-emerald-500/30 text-emerald-400 hidden sm:flex">
               Dark Web Infrastructure
             </Badge>
           </div>
@@ -103,7 +103,8 @@ export default function HomePage() {
       <div className="border-b border-border bg-card/30">
         <div className="container mx-auto px-4">
           <Tabs value={activeTab} onValueChange={setActiveTab}>
-            <TabsList className="bg-transparent h-12 gap-1">
+            <div className="overflow-x-auto -mb-px tabs-scroll-container">
+            <TabsList className="bg-transparent h-12 gap-1 w-max min-w-full">
               <TabsTrigger
                 value="home"
                 className="data-[state=active]:bg-emerald-500/20 data-[state=active]:text-emerald-400 h-9"
@@ -150,6 +151,7 @@ export default function HomePage() {
                 Карта
               </TabsTrigger>
             </TabsList>
+            </div>
 
             <div className="sr-only">
               {/* Hidden tab contents for non-home tabs rendered below */}
@@ -163,10 +165,10 @@ export default function HomePage() {
         {activeTab === 'home' && (
           <div className="space-y-8 animate-fade-in-up">
             {/* Hero section */}
-            <div className="text-center py-8">
+            <div className="text-center py-4 sm:py-8">
               {/* Large spider web icon */}
               <div className="flex justify-center mb-4">
-                <svg viewBox="0 0 100 100" className="h-20 w-20" fill="none">
+                <svg viewBox="0 0 100 100" className="h-14 w-14 sm:h-20 sm:w-20" fill="none">
                   <g stroke="#7C3AED" strokeWidth="0.8" opacity="0.5">
                     <line x1="50" y1="50" x2="50" y2="5"/>
                     <line x1="50" y1="50" x2="82" y2="12"/>
@@ -196,7 +198,7 @@ export default function HomePage() {
                   </g>
                 </svg>
               </div>
-              <h2 className="text-4xl font-bold mb-3 tracking-widest">
+              <h2 className="text-2xl sm:text-4xl font-bold mb-3 tracking-widest">
                 <span className="text-emerald-400">DARK</span>
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto text-lg mb-2">

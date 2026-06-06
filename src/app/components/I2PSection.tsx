@@ -50,18 +50,19 @@ export function I2PSection() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center gap-3 mb-4">
+      <div className="flex items-center gap-2 sm:gap-3 mb-4">
         <div className="p-2 rounded-lg bg-sky-500/10">
           <span className="text-2xl">🕸️</span>
         </div>
         <div>
-          <h2 className="text-2xl font-bold text-sky-400">{i2pTheory.title}</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-sky-400">{i2pTheory.title}</h2>
           <p className="text-muted-foreground text-sm">{i2pTheory.description}</p>
         </div>
       </div>
 
       <Tabs defaultValue="theory" className="space-y-4">
-        <TabsList className="bg-card/50 border border-border">
+        <div className="overflow-x-auto -mb-px tabs-scroll-container">
+        <TabsList className="bg-card/50 border border-border w-max min-w-full">
           <TabsTrigger value="theory" className="data-[state=active]:bg-sky-500/20 data-[state=active]:text-sky-400">
             📖 Теория
           </TabsTrigger>
@@ -81,6 +82,7 @@ export function I2PSection() {
             🚀 Установка
           </TabsTrigger>
         </TabsList>
+        </div>
 
         <TabsContent value="theory">
           <TheoryCard sections={i2pTheory.sections} faq={i2pTheory.faq} accentColor="#0284C7" />
@@ -232,7 +234,7 @@ export function I2PSection() {
               <CardDescription>Сравнение анонимных сетей</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="overflow-x-auto">
+              <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-border">

@@ -108,7 +108,7 @@ export function ChatBot() {
           <div className="flex items-center gap-2">
             <Bot className="h-5 w-5 text-emerald-400" />
             <CardTitle className="text-emerald-400 text-lg">ИИ-Ассистент</CardTitle>
-            <Badge variant="outline" className="text-[10px] border-emerald-500/50 text-emerald-400">
+            <Badge variant="outline" className="text-[10px] border-emerald-500/50 text-emerald-400 hidden sm:inline-flex">
               Dark Web Expert
             </Badge>
           </div>
@@ -119,14 +119,14 @@ export function ChatBot() {
       </CardHeader>
       <CardContent className="flex-1 flex flex-col min-h-0">
         {/* Messages area */}
-        <div ref={scrollRef} className="flex-1 overflow-y-auto space-y-3 mb-3 custom-scrollbar min-h-[300px] max-h-[500px]">
+        <div ref={scrollRef} className="flex-1 overflow-y-auto space-y-3 mb-3 custom-scrollbar min-h-[250px] sm:min-h-[300px] max-h-[60vh] sm:max-h-[500px]">
           {messages.length === 0 && (
             <div className="flex flex-col items-center justify-center h-full gap-4 py-8">
               <Bot className="h-12 w-12 text-emerald-400/30" />
               <p className="text-sm text-muted-foreground text-center">
                 Задайте вопрос о сетевой инфраструктуре Dark/Deep Web
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full max-w-md">
+              <div className="grid grid-cols-1 gap-2 w-full max-w-md">
                 {suggestedQuestions.map((q, i) => (
                   <Button
                     key={i}

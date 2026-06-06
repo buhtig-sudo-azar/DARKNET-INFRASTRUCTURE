@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
 Всегда объясняй технические термины простым языком. Приводи примеры конфигураций когда уместно.${searchContext ? `\n\nКонтекст из поиска:\n${searchContext}` : ''}`;
 
     const apiKey = process.env.OPENROUTER_API_KEY;
-    const model = process.env.OPENROUTER_MODEL || 'nvidia/nemotron-3-ultra-550b-a55b:free';
+    const model = process.env.OPENROUTER_MODEL || 'google/gemma-4-31b-it:free';
 
     if (!apiKey) {
       return new Response(JSON.stringify({ error: 'OpenRouter API key not configured' }), {
@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
       headers: {
         'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
-        'HTTP-Referer': 'https://darknet-infrastructure.vercel.app/',
+        'HTTP-Referer': 'https://dark-psi.vercel.app/',
       },
       body: JSON.stringify({
         model,

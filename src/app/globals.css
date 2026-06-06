@@ -149,3 +149,20 @@ vercel-analytics,
 .animate-fade-in-up {
   animation: fade-in-up 0.3s ease-out;
 }
+
+/* Mobile tab scrolling */
+.tabs-scroll-container {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.tabs-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile-safe area */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .mobile-safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}

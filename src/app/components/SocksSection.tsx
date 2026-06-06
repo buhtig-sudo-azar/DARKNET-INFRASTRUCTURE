@@ -37,18 +37,19 @@ const socksInstallSteps = [
 export function SocksSection() {
   return (
     <div className="space-y-6">
-      <div className="flex items-center gap-3 mb-4">
+      <div className="flex items-center gap-2 sm:gap-3 mb-4">
         <div className="p-2 rounded-lg bg-emerald-500/10">
           <span className="text-2xl">🔌</span>
         </div>
         <div>
-          <h2 className="text-2xl font-bold text-emerald-500">{socksTheory.title}</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-emerald-500">{socksTheory.title}</h2>
           <p className="text-muted-foreground text-sm">{socksTheory.description}</p>
         </div>
       </div>
 
       <Tabs defaultValue="theory" className="space-y-4">
-        <TabsList className="bg-card/50 border border-border">
+        <div className="overflow-x-auto -mb-px tabs-scroll-container">
+        <TabsList className="bg-card/50 border border-border w-max min-w-full">
           <TabsTrigger value="theory" className="data-[state=active]:bg-emerald-500/20 data-[state=active]:text-emerald-400">
             📖 Теория
           </TabsTrigger>
@@ -65,6 +66,7 @@ export function SocksSection() {
             🚀 Установка
           </TabsTrigger>
         </TabsList>
+        </div>
 
         <TabsContent value="theory">
           <TheoryCard sections={socksTheory.sections} faq={socksTheory.faq} accentColor="#059669" />
@@ -116,7 +118,7 @@ export function SocksSection() {
               <CardDescription>Сравнительная таблица технологий проксирования</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="overflow-x-auto">
+              <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-border">

@@ -115,7 +115,7 @@ export function ConfigGenerator({ title, description, fields, apiEndpoint, apiTy
         <Button
           onClick={handleGenerate}
           disabled={loading}
-          className="w-full"
+          className="w-full min-h-[44px] text-sm sm:text-base"
           style={{ backgroundColor: accentColor }}
         >
           {loading ? (

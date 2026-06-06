@@ -65,7 +65,7 @@ export function NetworkMap() {
         <div className="relative w-full overflow-x-auto">
           <svg
             viewBox="0 0 860 400"
-            className="w-full min-w-[600px] h-auto"
+            className="w-full min-w-[300px] sm:min-w-[600px] h-auto"
             style={{ maxHeight: '500px' }}
           >
             {/* Background grid */}

@@ -48,18 +48,19 @@ export function OnionSection() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center gap-3 mb-4">
+      <div className="flex items-center gap-2 sm:gap-3 mb-4">
         <div className="p-2 rounded-lg bg-red-500/10">
           <span className="text-2xl">🔗</span>
         </div>
         <div>
-          <h2 className="text-2xl font-bold text-red-500">{onionTheory.title}</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-red-500">{onionTheory.title}</h2>
           <p className="text-muted-foreground text-sm">{onionTheory.description}</p>
         </div>
       </div>
 
       <Tabs defaultValue="theory" className="space-y-4">
-        <TabsList className="bg-card/50 border border-border">
+        <div className="overflow-x-auto -mb-px tabs-scroll-container">
+        <TabsList className="bg-card/50 border border-border w-max min-w-full">
           <TabsTrigger value="theory" className="data-[state=active]:bg-red-500/20 data-[state=active]:text-red-400">
             📖 Теория
           </TabsTrigger>
@@ -76,6 +77,7 @@ export function OnionSection() {
             🚀 Развёртывание
           </TabsTrigger>
         </TabsList>
+        </div>
 
         <TabsContent value="theory">
           <TheoryCard sections={onionTheory.sections} faq={onionTheory.faq} accentColor="#DC2626" />
