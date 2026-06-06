@@ -14,10 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dark/Deep Web Network Infrastructure — Академический проект",
+  title: "DARK — Сетевая инфраструктура Dark Web",
   description:
-    "Образовательная платформа для изучения сетевой инфраструктуры Dark/Deep Web: Tor, SOCKS5, I2P, Onion-сервисы. Интерактивные симуляторы, конфигураторы и теоретические материалы.",
+    "DARK — образовательная платформа для изучения сетевой инфраструктуры Dark/Deep Web: Tor, SOCKS5, I2P, Onion-сервисы. Интерактивные симуляторы, конфигураторы и теоретические материалы.",
   keywords: [
+    "DARK",
     "Tor",
     "SOCKS5",
     "I2P",
@@ -28,9 +29,9 @@ export const metadata: Metadata = {
     "анонимность",
     "луковичная маршрутизация",
   ],
-  authors: [{ name: "Academic Project" }],
+  authors: [{ name: "DARK Project" }],
   icons: {
-    icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧅</text></svg>",
+    icon: "/favicon.svg",
   },
 };
 

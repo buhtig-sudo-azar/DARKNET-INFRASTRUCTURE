@@ -69,16 +69,31 @@ export default function HomePage() {
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Shield className="h-6 w-6 text-emerald-400" />
-              <h1 className="text-lg font-bold">
-                <span className="text-emerald-400">Dark</span>
-                <span className="text-muted-foreground">/</span>
-                <span className="text-sky-400">Deep Web</span>
-                <span className="text-muted-foreground ml-2 text-sm font-normal">Infrastructure</span>
+              {/* Spider web icon */}
+              <svg viewBox="0 0 100 100" className="h-7 w-7" fill="none">
+                <g stroke="#7C3AED" strokeWidth="1.5" opacity="0.7">
+                  <line x1="50" y1="50" x2="50" y2="10"/>
+                  <line x1="50" y1="50" x2="78" y2="18"/>
+                  <line x1="50" y1="50" x2="90" y2="50"/>
+                  <line x1="50" y1="50" x2="78" y2="82"/>
+                  <line x1="50" y1="50" x2="50" y2="90"/>
+                  <line x1="50" y1="50" x2="22" y2="82"/>
+                  <line x1="50" y1="50" x2="10" y2="50"/>
+                  <line x1="50" y1="50" x2="22" y2="18"/>
+                  <circle cx="50" cy="50" r="14"/>
+                  <circle cx="50" cy="50" r="26"/>
+                  <circle cx="50" cy="50" r="38"/>
+                </g>
+                <ellipse cx="50" cy="55" rx="5" ry="7" fill="#10B981"/>
+                <ellipse cx="50" cy="46" rx="3.5" ry="4" fill="#10B981"/>
+                <circle cx="50" cy="41" r="2" fill="#10B981"/>
+              </svg>
+              <h1 className="text-xl font-bold tracking-wider">
+                <span className="text-emerald-400">DARK</span>
               </h1>
             </div>
             <Badge variant="outline" className="text-xs border-emerald-500/30 text-emerald-400">
-              Академический проект
+              Dark Web Infrastructure
             </Badge>
           </div>
         </div>
@@ -149,11 +164,45 @@ export default function HomePage() {
           <div className="space-y-8 animate-fade-in-up">
             {/* Hero section */}
             <div className="text-center py-8">
-              <h2 className="text-3xl font-bold mb-3">
-                <span className="text-emerald-400">Dark/Deep Web</span>{' '}
-                <span className="text-foreground">Network Infrastructure</span>
+              {/* Large spider web icon */}
+              <div className="flex justify-center mb-4">
+                <svg viewBox="0 0 100 100" className="h-20 w-20" fill="none">
+                  <g stroke="#7C3AED" strokeWidth="0.8" opacity="0.5">
+                    <line x1="50" y1="50" x2="50" y2="5"/>
+                    <line x1="50" y1="50" x2="82" y2="12"/>
+                    <line x1="50" y1="50" x2="95" y2="50"/>
+                    <line x1="50" y1="50" x2="82" y2="88"/>
+                    <line x1="50" y1="50" x2="50" y2="95"/>
+                    <line x1="50" y1="50" x2="18" y2="88"/>
+                    <line x1="50" y1="50" x2="5" y2="50"/>
+                    <line x1="50" y1="50" x2="18" y2="12"/>
+                    <circle cx="50" cy="50" r="12"/>
+                    <circle cx="50" cy="50" r="22"/>
+                    <circle cx="50" cy="50" r="32"/>
+                    <circle cx="50" cy="50" r="42"/>
+                  </g>
+                  <ellipse cx="50" cy="57" rx="5" ry="7" fill="#10B981"/>
+                  <ellipse cx="50" cy="47" rx="3.5" ry="4.5" fill="#10B981"/>
+                  <circle cx="50" cy="41" r="2" fill="#10B981"/>
+                  <g stroke="#10B981" strokeWidth="1.2" strokeLinecap="round">
+                    <path d="M47 47 Q38 40 28 34"/>
+                    <path d="M54 47 Q62 40 72 34"/>
+                    <path d="M46 50 Q34 48 24 50"/>
+                    <path d="M54 50 Q66 48 76 50"/>
+                    <path d="M46 54 Q34 56 24 60"/>
+                    <path d="M54 54 Q66 56 76 60"/>
+                    <path d="M47 58 Q38 64 30 72"/>
+                    <path d="M53 58 Q62 64 70 72"/>
+                  </g>
+                </svg>
+              </div>
+              <h2 className="text-4xl font-bold mb-3 tracking-widest">
+                <span className="text-emerald-400">DARK</span>
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-muted-foreground max-w-2xl mx-auto text-lg mb-2">
+                Сетевая инфраструктура Dark Web
+              </p>
+              <p className="text-muted-foreground/70 max-w-xl mx-auto text-sm">
                 Образовательная интерактивная платформа для изучения сетевой инфраструктуры
                 анонимных сетей. Теория, конфигураторы, визуализации и ИИ-ассистент — всё на русском языке.
               </p>
@@ -249,8 +298,8 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="border-t border-border py-4 mt-auto">
         <div className="container mx-auto px-4 text-center text-xs text-muted-foreground">
-          <p>Академический проект: Dark/Deep Web Network Infrastructure — образовательная платформа</p>
-          <p className="mt-1">Tor • SOCKS5 • I2P • Onion Services — Все материалы на русском языке</p>
+          <p className="font-semibold tracking-wider">DARK — Сетевая инфраструктура Dark Web</p>
+          <p className="mt-1">Tor • SOCKS5 • I2P • Onion Services — Образовательная платформа</p>
         </div>
       </footer>
     </div>
