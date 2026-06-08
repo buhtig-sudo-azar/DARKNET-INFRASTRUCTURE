@@ -48,3 +48,7 @@ test
 prompt
 
 server.log
+-e 
+# AI platform artifacts
+Caddyfile
+worklog.md
